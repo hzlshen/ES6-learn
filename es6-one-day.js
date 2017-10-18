@@ -184,7 +184,92 @@ const nodes = Array.from(foo);
 //best
 [1,2,3].map(x=>x*x);
 
+//箭头函数取代Function.prototype.bid 不再用that之类绑定this
+//bad
+const self = this;
+const boundMethod = function (...params) {
+    return method.apply(self,params);
+}
 
+//accepable
+const boundMethod = method.bind(this);
+
+//best
+const boundMethod = (...params)=>method.apply(this,params);
+
+//简单的、单行的、不会复用的函数，建议采用箭头函数。
+// 如果函数体较为复杂，行数较多，还是应该采用传统的函数写法。
+
+//bad
+function divide(a, b, option = false) {
+
+}
+
+//good
+function divide(a, b, {option = false} = {}) {
+
+}
+//不要在函数体内使用arguments变量，使用rest运算符（...）代替
+//bad
+function concatenateAll() {
+    const args = Array.prototype.slice.call(arguments);
+    return args.join('');
+}
+
+//good
+function concatenateAll(...args) {
+    return args.join('');
+}
+
+//设置函数参数的默认值
+//bad
+function handleThings(opts) {
+    opts = opts || {};
+}
+
+//good
+function handleThings(opts = {}) {
+    //...
+}
+
+//Map 结构
+//它內建有遍历机制
+let map = new Map(arr);
+
+for(let key of map.keys()){
+    console.log(key);
+}
+
+for(let value of map.value()){
+    console.log(value);
+}
+
+for(let item of map.entries()){
+    console.log(item[0],item[1]);
+}
+
+//用class取代prototype的操作 写法更简洁 姿势更帅
+//bad
+function Queue(contents = []) {
+    this._queue = [...contents];
+}
+Queue.prototype.pop = function () {
+    const value = this._queue[0];
+    this._queue.slice(0,1);
+    return value;
+}
+
+//good
+class Queue{
+    constructor(contents = []){
+        this._queue = [...contents];
+    }
+    pop(){
+        const value = this._queue[0];
+        this._queue.slice(0,1);
+        return value;
+    }
+}
 
 
 

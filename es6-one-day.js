@@ -271,6 +271,153 @@ class Queue{
     }
 }
 
+//使用extend实现继承
+
+//bad
+const inherits = require('inherits');
+function PeekableQueue(contents) {
+    Queue.apply(this,contents);
+}
+inherits(PeekableQueue,Queue);
+PeekableQueue.prototype.peek = function () {
+    return this._queue[0];
+}
+
+//good
+class PeekableQueue extends Queue{
+    peek(){
+        return this._queue[0];
+    }
+}
+//模块
+//module语法是JavaScript模块的标准写法 坚持使用这种写法
+//使用import取代require
+
+//bad
+const moduleA = require('moduleA');
+const func1 = moduleA.func1;
+const func2 = moduleA.func2;
+
+//import
+import { func1 , func2 } from  'moduleA';
+
+//使用export取代module.exports
+
+//commonJS的写法
+var React = require('react');
+
+var Breadcrumbs  = React.createClass({
+    render(){
+        return '<nav />';
+    }
+});
+
+module.exports = Breadcrumbs;
+
+//ES6的写法
+import React from 'react';
+
+const Breadcrumbs = React.createClass({
+    render(){
+        return '<nav />';
+    }
+});
+
+export default Breadcrumbs;
+
+//不要在模块输入中使用通配符
+//bad
+import * as myObject from './importModule';
+
+//good
+import myObject from  './importModule';
+
+//如果函数默认输出一个函数 函数名首字母应该小写
+function makeStyleGuide(){
+
+}
+export  default makeStyleGuide;
+
+//如果函数默认一个对象 函数首字母应该大写
+const StyleGuide = {
+    es6:{
+
+    }
+};
+export default StyleGuide;
+
+//ESLint的使用
+//他是一个语法规则和代码风格的检查工具 可以用来确保语法正确
+//安装
+ //$ npm i -g eslint
+
+//然后安装Airbnb语法规则
+
+//$ npm i -g eslint-config-airbnb
+
+//最后，在项目的根目录下新建一个.eslintrc文件，配置ESLint。
+
+{
+    //"extends": "eslint-config-airbnb"
+}
+//现在就可以检查，当前项目的代码是否符合预设的规则。
+
+//index.js文件的代码如下。
+
+var unusued = 'I have no purpose!';
+
+function greet() {
+    var message = 'Hello, World!';
+    alert(message);
+}
+
+greet();
+
+//原文件有三个错误，一个是定义了变量，却没有使用，另外两个是行首缩进为4个空格，而不是规定的2个空格。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

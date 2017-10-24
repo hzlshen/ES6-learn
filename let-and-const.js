@@ -76,6 +76,222 @@ function dis(x = 2, y = x) {
 }
 dis();
 
+//不允许重复声明
+//let 不允许在相同的作用域内 重复声明一个变量
+
+//报错
+// function() {
+//     let a = 10;
+//     var a = 1;
+//}
+
+//报错
+/*function () {
+    let a = 10;
+    let a = 1;
+}*/
+
+//因此 不能在函数内部重新声明参数
+/*function func(arg) {
+    let arg;  //报错
+}*/
+function func(arg) {
+    {
+        let arg;  //不报错
+    }
+}
+
+//块级作用域
+//为什么需要
+//ES5只有全局作用域和函数作用域 没有块级作用域者带来很多不合理的场景
+//第一种场景 内层变量可能会覆盖外层变量
+
+var tmp = new Date();
+
+function f() {
+    console.log(tmp);
+    if(false){
+        var tmp = "hello word";
+    }
+}
+f()   //undefinde
+//原因在于变量提升 导致内层的tmp覆盖外层的
+
+//第二种场景 用来计数的循环变量泄露为全局变量
+
+var s = 'hello';
+for(var i = 0; i<s.length;i++){
+    console.log(s[i]);
+}
+console.log(i);// 5
+//变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。
+
+//let新增了块级作用域
+function f1() {
+    let n = 5;
+    if (true){
+        let n =10;
+    }
+    console.log(n);
+    //都声明了变量n，运行后输出5。这表示外层代码块不受内层代码块的影响。
+    // 如果使用var定义变量n，最后输出的值就是10。
+}
+//ES6允许块级作用域的任意嵌套
+{{{{{let insane = 'hello world'}}}}};
+
+//外层作用域无法读取内层作用域的变量。
+
+{{{{
+    {let insane = 'Hello World'}
+    console.log(insane); // 报错
+}}}};
+//内层作用域可以定义外层作用域的同名变量。
+
+{{{{
+    let insane = 'Hello World';
+    {let insane = 'Hello World'}
+}}}};
+
+//IIFE写法
+(function () {
+//    var tmp = ...;
+}());
+
+//块级作用域和函数声明
+//函数能不能在块级作用域中声明 是一个相当令人混淆的问题
+//ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。
+
+//情况一
+if(true){
+    function f() {
+    }
+}
+//情况二
+try{
+    function f() {
+    }
+}catch (e){
+
+}
+//上面代码的两种函数声明，根据ES5的规定都是非法的。
+//ES5严格模式下会报错
+//ES6不会
+
+//ES6规定 块级作用域之中 函数声明语句的行为类似于let 在块级作用域之外不可引用
+function f() {
+    console.log("I'm shuaige");
+}
+(function(){
+    if (false){
+        //重复声明一次函数f
+        function f() {
+            console.log("I'm shuaige");
+        }
+    }
+    f();
+}())
+
+// ES5下运行实际是这样子的
+function f() { console.log('I am outside!'); }
+(function () {
+    function f() { console.log('I am inside!'); }
+    if (false) {
+    }
+    f();
+}());
+// ES6是这样子的
+function f() { console.log('I am outside!'); }
+(function () {
+    f();
+}());
+
+//前面那段代码，在 Chrome 环境下运行会报错。
+
+// ES6的浏览器环境
+function f() { console.log('I am outside!'); }
+(function () {
+    if (false) {
+        // 重复声明一次函数f
+        function f() { console.log('I am inside!'); }
+    }
+
+    f();
+}());
+// Uncaught TypeError: f is not a function
+//上面的代码报错，是因为实际运行的是下面的代码。
+
+// ES6的浏览器环境
+function f() { console.log('I am outside!'); }
+(function () {
+    var f = undefined;
+    if (false) {
+        function f() { console.log('I am inside!'); }
+    }
+
+    f();
+}());
+// Uncaught TypeError: f is not a function
+
+//如果确实需要，也应该写成函数表达式，而不是函数声明语句。
+
+//函数声明语句
+{
+    let a = 'select';
+    function f() {
+        return a;
+    }
+}
+
+//函数表达式
+{
+    let a = 'select';
+    let f = function () {
+        return a ;
+    }
+}
+//ES6的块级作用域允许声明函数的规则，
+// 只在使用大括号的情况下成立，如果没有使用大括号，就会报错。
+// 不报错
+// 'use strict';
+if (true) {
+    function f() {}
+}
+
+// 报错
+// 'use strict';
+if (true)
+    function f() {}
+
+//do 表达式 本质上块级作用域是一个语句 将多个操作封装在一起 没有返回值
+{
+    let t = f();
+    t = t*t+1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

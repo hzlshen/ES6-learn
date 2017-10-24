@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3d5c31-e934-497b-a06a-43e5f906a269" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let-and-const.js" afterPath="$PROJECT_DIR$/let-and-const.js" />
     </list>
     <ignored path="ES6-learn.iws" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="let-and-const.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/let-and-const.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -78,8 +77,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="826" />
-    <option name="y" value="53" />
+    <option name="x" value="790" />
+    <option name="y" value="34" />
     <option name="width" value="1426" />
     <option name="height" value="980" />
   </component>
@@ -231,15 +230,15 @@
       <workItem from="1508383084799" duration="19000" />
       <workItem from="1508742955002" duration="901000" />
       <workItem from="1508743891478" duration="6690000" />
-      <workItem from="1508830516960" duration="4967000" />
+      <workItem from="1508830516960" duration="5759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20054000" />
+    <option name="totallyTimeSpent" value="20846000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="826" y="53" width="1426" height="980" extended-state="0" />
+    <frame x="790" y="34" width="1426" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -338,8 +337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/let-and-const.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="269" column="0" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

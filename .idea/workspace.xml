@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3d5c31-e934-497b-a06a-43e5f906a269" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let-and-const.js" afterPath="$PROJECT_DIR$/let-and-const.js" />
     </list>
     <ignored path="ES6-learn.iws" />
@@ -40,8 +41,8 @@
       <file leaf-file-name="let-and-const.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/let-and-const.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="375" column="2" selection-start-line="375" selection-start-column="2" selection-end-line="375" selection-end-column="2" />
+            <state relative-caret-position="-195">
+              <caret line="384" column="12" selection-start-line="384" selection-start-column="12" selection-end-line="384" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -230,12 +231,12 @@
       <workItem from="1508383084799" duration="19000" />
       <workItem from="1508742955002" duration="901000" />
       <workItem from="1508743891478" duration="6690000" />
-      <workItem from="1508830516960" duration="8150000" />
+      <workItem from="1508830516960" duration="8201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23237000" />
+    <option name="totallyTimeSpent" value="23288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="889" y="25" width="1426" height="980" extended-state="0" />
@@ -337,8 +338,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/let-and-const.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="375" column="2" selection-start-line="375" selection-start-column="2" selection-end-line="375" selection-end-column="2" />
+        <state relative-caret-position="-195">
+          <caret line="384" column="12" selection-start-line="384" selection-start-column="12" selection-end-line="384" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

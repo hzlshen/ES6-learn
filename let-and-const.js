@@ -383,7 +383,6 @@ typeof require === 'function' &&
 typeof global === 'object')
     ? global
     : this);
-
 // 方法二
 var getGlobal = function () {
     if (typeof self !== 'undefined') { return self; }

@@ -3,10 +3,10 @@
 
 //下面是一个类的对象
 let arrayLike = {
-    '0' : 'a',
-    '1' : 'b',
-    '2' : 'c',
-    length : 3
+    '0': 'a',
+    '1': 'b',
+    '2': 'c',
+    length: 3
 };
 
 //ES5的写法
@@ -20,7 +20,7 @@ let arr2 = Array.from(arrayLike);
 
 //NodeList 对象
 let ps = document.querySelectorAll('p');
-Array.from(ps).forEach(function(p){
+Array.from(ps).forEach(function(p) {
     console.log(p);
 })
 
@@ -34,33 +34,33 @@ function foo() {
 Array.from('hello');
 //['h', 'e', 'l', 'l', 'o']
 
-let namesSet = new Set(['a','b']);
+let namesSet = new Set(['a', 'b']);
 Array.from(namesSet);
 //字符串和Set结构都具有Iterator接口，因此可以被Array.from转为真正的数组。
 
-Array.from(1,2,3);
+Array.from(1, 2, 3);
 
 //扩展运算符（...）也可以将某些数据结构转为数组。
 //arguments
 function foo() {
-    var args =  [...arguments];
+    var args = [...arguments];
 }
 Array.from({ length: 3 });
 // [ undefined, undefined, undefined ]
 
-const toArray = (()=>{
-    Array.form?Array.form:obj =>[].slice.call(obj);
+const toArray = (() => {
+    Array.form ? Array.form : obj => [].slice.call(obj);
 })();
 
 //Array.form 还可以接收第二个参数 类似于数组的map方法 
 
-Array.form(arrayLike,x=>x*x);
+Array.form(arrayLike, x => x * x);
 
 //等同于
 
-Array.form(arrayLike).map(x=>x*x);
+Array.form(arrayLike).map(x => x * x);
 
-Array.form([1,2,3],(x)=>x*x);
+Array.form([1, 2, 3], (x) => x * x);
 
 //[1,4，9]
 
@@ -69,27 +69,15 @@ Array.form([1,2,3],(x)=>x*x);
 let spans = document.querySelectorAll(span.name);
 
 //map()
-let names1 = Array.prototype.map.call(spans,s=>s.textContent);
+let names1 = Array.prototype.map.call(spans, s => s.textContent);
 
 //Array.form
-let names2 = Array.form(spans,s=>s.s.textContent);
+let names2 = Array.form(spans, s => s.s.textContent);
 
 //Array.form() 将数组转成false的成员转为0
-Array.form([1,2,3],(n)=>n||0);
+Array.form([1, 2, 3], (n) => n || 0);
 console.log(n);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Array() // []
+Array(3) // [, , ,]
+Array(3, 11, 8) // [3, 11, 8]

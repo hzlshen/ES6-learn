@@ -81,3 +81,15 @@ console.log(n);
 Array() // []
 Array(3) // [, , ,]
 Array(3, 11, 8) // [3, 11, 8]
+
+//Array.of总是返回参数值组成的数组。如果没有参数，就返回一个空数组。
+
+function ArrayOf() {
+    return [].slice.call(arguments);
+}
+
+
+//数组实例的copyWithin()
+Array.prototype.copyWithin(target, start = 0, end = this.length);
+
+[1, 2, 3, 4, 5].copyWithin(0, 3);

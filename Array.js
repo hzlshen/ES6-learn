@@ -48,16 +48,35 @@ function foo() {
 Array.from({ length: 3 });
 // [ undefined, undefined, undefined ]
 
+const toArray = (()=>{
+    Array.form?Array.form:obj =>[].slice.call(obj);
+})();
 
+//Array.form 还可以接收第二个参数 类似于数组的map方法 
 
+Array.form(arrayLike,x=>x*x);
 
+//等同于
 
+Array.form(arrayLike).map(x=>x*x);
 
+Array.form([1,2,3],(x)=>x*x);
 
+//[1,4，9]
 
+//获取dom
 
+let spans = document.querySelectorAll(span.name);
 
+//map()
+let names1 = Array.prototype.map.call(spans,s=>s.textContent);
 
+//Array.form
+let names2 = Array.form(spans,s=>s.s.textContent);
+
+//Array.form() 将数组转成false的成员转为0
+Array.form([1,2,3],(n)=>n||0);
+console.log(n);
 
 
 

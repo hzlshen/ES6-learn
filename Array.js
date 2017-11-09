@@ -110,3 +110,12 @@ console.log([1, 4, -5, 10].find((n) => n < 0));
 console.log([1, 5, 10, 15].find(function(value, index, err) {
         return value > 9;
     })) //10
+
+//findindex()返回符合条件的数组成员位置
+[1, 5, 10, 15].findIndex(function(value, inidex, err) {
+    return value > 9
+})
+
+//fill()
+//fill方法给定值 填充数组
+['a', 'b', 'c'].fill(7);

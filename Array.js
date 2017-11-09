@@ -93,3 +93,20 @@ function ArrayOf() {
 Array.prototype.copyWithin(target, start = 0, end = this.length);
 
 [1, 2, 3, 4, 5].copyWithin(0, 3);
+//4 5 3 4 5
+
+// 将3号位复制到0号位
+[1, 2, 3, 4, 5].copyWithin(0, 3, 4)
+    // [4, 2, 3, 4, 5]
+
+//数组实例的find()和findIndex()
+//数组中找出小于零的
+[1, 4, -5, 10].find((n) => n < 0)
+console.log([1, 4, -5, 10].find((n) => n < 0));
+
+[1, 5, 10, 15].find(function(value, index, err) {
+    return value > 9;
+})
+console.log([1, 5, 10, 15].find(function(value, index, err) {
+        return value > 9;
+    })) //10

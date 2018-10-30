@@ -121,3 +121,4 @@ console.log([1, 5, 10, 15].find(function(value, index, err) {
 ['a', 'b', 'c'].fill(7);
 
 let min = 14.1;
+let eaiml = "hzl.shenwei@gmail.com";

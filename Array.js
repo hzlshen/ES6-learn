@@ -119,3 +119,5 @@ console.log([1, 5, 10, 15].find(function(value, index, err) {
 //fill()
 //fill方法给定值 填充数组
 ['a', 'b', 'c'].fill(7);
+
+let min = 14.1;

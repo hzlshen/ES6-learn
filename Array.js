@@ -122,3 +122,23 @@ console.log([1, 5, 10, 15].find(function(value, index, err) {
 
 let min = 14.1;
 let eaiml = "hzl.shenwei@gmail.com";
+
+let arrData = [
+    { 
+        name : "111",
+        arr:[
+            { 
+                name:'333',
+                children:[
+                    {
+                        name:'yyy'
+                    }
+                ]
+            }
+        ]
+    },
+    { name : "311" },
+    { name : "11" },
+    { name : "111" },
+    { name : "111" },
+]
